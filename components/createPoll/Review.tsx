@@ -4,7 +4,6 @@ import { useFormContext } from 'react-hook-form';
 import { CreateNewPoll } from '@/types/newPoll/CreatePollSchema';
 import PollDetailsCard from '../shared/PollDetailsCard';
 import useStore from '@/utils/store';
-import { DateTime } from '@/stories/Button.stories';
 import WarningSVG from '@/public/images/WarningSVG';
 
 export default function Review() {
