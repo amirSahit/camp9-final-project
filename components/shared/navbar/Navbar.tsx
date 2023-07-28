@@ -14,7 +14,6 @@ interface NavbarProps {
 }
 export const Navbar = ({ active, className }: NavbarProps) => {
   const path = usePathname();
-  console.log(path);
   return (
     <>
       <nav className="flex justify-center container">
