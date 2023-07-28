@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { forwardRef } from 'react';
 
 type Input = React.InputHTMLAttributes<HTMLInputElement>;
@@ -26,7 +27,7 @@ const CheckboxButton = forwardRef<HTMLInputElement, Props>(
             </>
           ) : (
             <div className="w-[36px] h-[36px] bg-peach shadow-brutal border-brutal rounded-md flex items-center justify-center">
-              <img
+              <Image
                 src="/images/icons/checkSvg.svg"
                 alt="checked box"
                 className="items-center"
@@ -38,5 +39,7 @@ const CheckboxButton = forwardRef<HTMLInputElement, Props>(
     );
   }
 );
+
+CheckboxButton.displayName = 'CheckboxButton';
 
 export default CheckboxButton;

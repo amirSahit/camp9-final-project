@@ -1,12 +1,14 @@
+import Image from 'next/image';
 import React from 'react';
 
 function Loading() {
   return (
     <div className="flex flex-col justify-center items-center mt-20">
-      <img
+      <Image
+        alt="loading"
         src="/images/flame-dreaming-of-unicorns.gif"
         className="w-[280px]"
-      ></img>
+      ></Image>
       <h3 className="title-bold">Loading...</h3>
     </div>
   );

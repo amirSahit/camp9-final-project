@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import _ from 'lodash';
 import { ExtendedPoll } from '@/types/pollActivity';
+import Image from 'next/image';
 
 // axios get new polls function
 async function getNewPollsAxios() {
@@ -72,7 +73,11 @@ function PollActivityCards({
       if (data.length === 0) {
         newCards = (
           <div className=" flex flex-col justify-center items-center">
-            <img src="/images/flame-288.gif" className="w-[250px]"></img>
+            <Image
+              alt="man in underpants with a cup in his hand"
+              src="/images/flame-288.gif"
+              className="w-[250px]"
+            ></Image>
             <h1 className="title-bold text-center">No polls to see.</h1>
           </div>
         );

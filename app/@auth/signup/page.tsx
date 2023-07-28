@@ -6,7 +6,7 @@ function SignUp() {
   return (
     <div className="flex flex-col justify-between gap-3">
       <div className="flex flex-col gap-9 justify-between">
-        <h1 className="appName">d'accord</h1>
+        <h1 className="appName">d&apos;accord</h1>
         <SignUpForm />
       </div>
       <div className="flex flex-col justify-center">

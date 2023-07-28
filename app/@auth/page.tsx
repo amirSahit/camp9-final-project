@@ -9,9 +9,10 @@ import Link from 'next/link';
 export default function LandingPage() {
   return (
     <div className="grid justify-center h-screen  bg-teal px-8 pt-8 overflow-y-hidden">
-      <h1 className="appName">d'accord</h1>
+      <h1 className="appName">d&apos;accord</h1>
       <div>
         <Image
+          width={300}
           src={applogo}
           alt="illustration of a group of people making decisions"
         />

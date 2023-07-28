@@ -39,17 +39,20 @@ export default function Voting({ params }: { params: { slug: string } }) {
     <QuestionVote
       description={query.data?.data.description}
       question={query.data?.data.question}
+      key={query.data?.data.id}
     />,
     <VotingConditions
       anonymity={query.data?.data.anonymity}
       quorum={query.data?.data.quorum}
+      key={query.data?.data.id}
     />,
     <VotingTypeChoice
       question={query.data?.data.question!}
       type={query.data?.data.type!}
       options={query.data?.data.options}
+      key={query.data?.data.id}
     />,
-    <VotingFeedback />,
+    <VotingFeedback key={query.data?.data.id} />,
   ];
 
   const [step, setStep] = useState<number>(0);

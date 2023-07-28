@@ -103,13 +103,13 @@ export default function PollResults({ poll }: { poll: PollResultsProps }) {
   const usersWhoVotedForOptionArray = (function () {
     const usersWhoVotedForOptionArray = [];
     for (let i = 0; i < poll.votes.length; i++) {
-      let arrEntry = []
+      let arrEntry = [];
       for (let j = 0; j < poll.votes.length; j++) {
         if (poll.votes[j]?.answer[i] === true) {
-          arrEntry.push(poll.votes[j]?.User.name);
+          arrEntry.push(poll.votes[j]?.userId);
         }
       }
-      usersWhoVotedForOptionArray.push(arrEntry)
+      usersWhoVotedForOptionArray.push(arrEntry);
     }
     return usersWhoVotedForOptionArray;
   })();
@@ -124,6 +124,7 @@ export default function PollResults({ poll }: { poll: PollResultsProps }) {
       pollQuestion={questionFitter(poll.question, 60).questionStart}
       endDate={new Date()}
       startDate={new Date()}
+      key={poll.id}
     >
       <PollResultsCard.Content className="h-[260px] flex flex-col">
         <Image
@@ -148,6 +149,7 @@ export default function PollResults({ poll }: { poll: PollResultsProps }) {
       pollQuestion={questionFitter(poll.question, 32).questionStart}
       endDate={new Date()}
       startDate={new Date()}
+      key={poll.id}
     >
       <PollResultsCard.Content className="h-[260px] ">
         <div className="overflow-y-auto scrollbar-left-padded scrollbar--results h-[230px]">
@@ -187,6 +189,7 @@ export default function PollResults({ poll }: { poll: PollResultsProps }) {
       pollQuestion={questionFitter(poll.question, 32).questionStart}
       endDate={new Date()}
       startDate={new Date()}
+      key={poll.id}
     >
       <PollResultsCard.Content className="h-[260px]">
         <p className="body-semibold mb-4">Voting Conditions</p>
@@ -233,8 +236,9 @@ export default function PollResults({ poll }: { poll: PollResultsProps }) {
       pollQuestion={questionFitter(poll.question, 32).questionStart}
       endDate={new Date()}
       startDate={new Date()}
+      key={poll.id}
     >
-      <PollResultsCard.Content className="h-[310px]">
+      <PollResultsCard.Content className="h-[310px]" key={poll.id}>
         <div className="overflow-y-auto scrollbar-left-padded scrollbar--results h-[270px]">
           {poll.options.map((option, index) => (
             <div className="mb-5" key={option}>
@@ -266,7 +270,7 @@ export default function PollResults({ poll }: { poll: PollResultsProps }) {
                       height={16}
                       alt="show participants who voted for this option"
                     ></Image>
-                    {usersWhoVotedForOptionArray[index]?.join(" ")}
+                    {usersWhoVotedForOptionArray[index]?.join(' ')}
                   </>
                 ) : (
                   ''
@@ -283,6 +287,7 @@ export default function PollResults({ poll }: { poll: PollResultsProps }) {
       pollQuestion={questionFitter(poll.question, 32).questionStart}
       endDate={new Date()}
       startDate={new Date()}
+      key={poll.id}
     >
       <PollResultsCard.Content className="h-[260px]">
         <p className="text-start description">

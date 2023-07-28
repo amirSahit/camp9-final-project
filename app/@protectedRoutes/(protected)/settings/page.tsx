@@ -78,7 +78,6 @@ function Settings() {
           <SettingsButton
             disabled={false}
             variant={usernameEdit}
-            children=""
             type="submit"
             onClick={() => {
               setUsernameEdit('check');
@@ -101,7 +100,6 @@ function Settings() {
             <SettingsButton
               disabled={false}
               variant={passwordEdit}
-              children=""
               type="submit"
               onClick={() => {
                 setPasswordEdit('check');

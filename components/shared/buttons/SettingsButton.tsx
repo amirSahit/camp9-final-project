@@ -8,7 +8,7 @@ type Button = React.ButtonHTMLAttributes<HTMLButtonElement>;
 interface settingsButtonProps extends Button {
   disabled: boolean;
   variant: 'pencil' | 'check';
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick: () => void;
 }
 
