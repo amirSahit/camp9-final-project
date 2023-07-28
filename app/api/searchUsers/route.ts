@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/libs/db';
-import { z, ZodError } from 'zod';
+import { ZodError } from 'zod';
+import { PrismaClient } from '@prisma/client';
 
 type SearchUserParams = {
   queryString: string;
@@ -11,6 +11,8 @@ interface IRequest extends NextRequest {
   json: () => Promise<SearchUserParams>;
 }
 
+const prisma = new PrismaClient();
+
 export async function GET(request: IRequest) {
   const params = new URL(request.nextUrl).searchParams;
   const queryString = params.get('queryString');
@@ -18,7 +20,7 @@ export async function GET(request: IRequest) {
   const alreadySelected = hasParticipants ? params.get('participants') : '';
 
   if (queryString !== null) {
-    const users = await db.user.findMany({
+    const users = await prisma.user.findMany({
       where: {
         name: {
           contains: queryString.toLocaleLowerCase(),
